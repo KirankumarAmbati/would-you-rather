@@ -28,6 +28,7 @@ body {
     list-style: none;
     margin: 2%;
     box-shadow: 1px 3px 25px 2px;
+    word-wrap: break-word;
 }
 
 .link {
