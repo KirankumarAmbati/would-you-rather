@@ -4,7 +4,7 @@ import {Link, Redirect} from 'react-router-dom'
 
 class Question extends React.Component {
     render() {
-        const {loggedUser, question, id} = this.props
+        const {loggedUser, question, id, users} = this.props
 
         if(loggedUser === null) {
             return <Redirect to='/' />
@@ -15,6 +15,13 @@ class Question extends React.Component {
                 to={`/question/${id}`}
                 className='link'
             >
+                <img
+                    src={users[question.author].avatarURL}
+                    alt={`Avatar of ${users[question.author].name}`}
+                    width='100px' 
+                    height='100px'
+                    style={{borderRadius:'50%'}}
+                />
                 <h3>Would you rather : </h3>
                 <p>A) {question.optionOne.text}</p>
                 <p>B) {question.optionTwo.text}</p>
@@ -23,10 +30,11 @@ class Question extends React.Component {
     }
 }
 
-function mapStateToProps({login, questions}, {id}) {
+function mapStateToProps({login, questions, users}, {id}) {
     return {
         loggedUser:login ? login.loggedUser : null,
-        question: questions[id]
+        question: questions[id],
+        users
     }
 }
 

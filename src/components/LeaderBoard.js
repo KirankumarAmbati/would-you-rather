@@ -18,6 +18,13 @@ class LeaderBoard extends React.Component {
                 <ul>
                     {userIds.map((userId) => (
                         <li key={userId} className='leaderBoard-card'>
+                            <img
+                                src={users[userId].avatarURL}
+                                alt={`Avatar of ${users[userId].name}`}
+                                width='100px' 
+                                height='100px'
+                                style={{borderRadius:'50%'}}
+                            />
                             <h1
                                 style={userId === loggedUser ? {color:'red'} : {color:'black'}}
                             >

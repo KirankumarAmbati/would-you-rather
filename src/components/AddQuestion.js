@@ -11,13 +11,17 @@ class AddQuestion extends React.Component {
         const optionTwoText = this.optionTwo.value
         const { loggedUser, dispatch } = this.props
         
-        dispatch(handleAddQuestion({
-            optionOneText,
-            optionTwoText,
-            author: loggedUser
-        }))
+        if(optionOneText && optionTwoText) {
+            dispatch(handleAddQuestion({
+                optionOneText,
+                optionTwoText,
+                author: loggedUser
+            }))
 
-        this.props.history.push('/dashboard')
+            this.props.history.push('/dashboard')
+        } else {
+            alert('Both options needs to be filled !! ')
+        }
     }
 
     render() {
@@ -41,7 +45,8 @@ class AddQuestion extends React.Component {
                         style={{
                             width: '200px',
                             height: '30px',
-                            marginRight: '10px'
+                            marginRight: '10px',
+                            marginBottom: '10px'
                         }}
                     />
                     <input
@@ -49,7 +54,8 @@ class AddQuestion extends React.Component {
                         ref={input => this.optionTwo = input}
                         style={{
                             width: '200px',
-                            height: '30px'
+                            height: '30px',
+                            marginBottom: '10px'
                         }}
                     />
                     <button

@@ -1,8 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Redirect} from 'react-router-dom'
-import {handleAnswerPoll} from '../actions/questions'
 import {Link} from 'react-router-dom'
+import {handleAnswerPoll} from '../actions/questions'
 
 class QuestionPage extends React.Component {
     submitAnswer = (option) => {
@@ -16,10 +16,14 @@ class QuestionPage extends React.Component {
     }
 
     render() {
-        const {loggedUser, question} = this.props
+        const {loggedUser, question, users} = this.props
 
         if(loggedUser === null) {
             return <Redirect to='/' />
+        }
+
+        if(question === null) {
+            return <h1>404. Poll Not Found</h1>
         }
 
         const optionSelectedByUser = isPollAnsweredByCurrentUser(loggedUser, question)
@@ -34,18 +38,25 @@ class QuestionPage extends React.Component {
                                         Your selection is: {question[optionSelectedByUser.optionSelected].text}
                                     </h3>
                                     <p>
-                                        {question.optionOne.text}: <span style={{fontWeight:'bold'}}>{optionSelectedByUser.numberOfOptionOneVotes.length}</span>
+                                        {question.optionOne.text}: <span style={{fontWeight:'bold'}}>{optionSelectedByUser.numberOfOptionOneVotes.length}</span>&nbsp;
                                         ({((optionSelectedByUser.numberOfOptionOneVotes.length/(optionSelectedByUser.numberOfOptionOneVotes.length+optionSelectedByUser.numberOfOptionTwoVotes.length))*100).toPrecision(3)}%)
                                         
                                     </p>
                                     <p>
-                                        {question.optionTwo.text}: <span style={{fontWeight:'bold'}}>{optionSelectedByUser.numberOfOptionTwoVotes.length}</span>
+                                        {question.optionTwo.text}: <span style={{fontWeight:'bold'}}>{optionSelectedByUser.numberOfOptionTwoVotes.length}</span>&nbsp;
                                         ({((optionSelectedByUser.numberOfOptionTwoVotes.length/(optionSelectedByUser.numberOfOptionOneVotes.length+optionSelectedByUser.numberOfOptionTwoVotes.length))*100).toPrecision(3)}%)
                                     </p>
                                 </div>
                                 )
                                 : (
                                     <div className='leaderBoard-card'>
+                                        <img
+                                            src={users[question.author].avatarURL}
+                                            alt={`Avatar of ${users[loggedUser].name}`}
+                                            width='100px' 
+                                            height='100px'
+                                            style={{borderRadius:'50%'}}
+                                        />
                                         <h1>Would You Rather</h1>
                                         <button className='button' onClick={() => this.submitAnswer('optionOne')}>{question.optionOne.text}</button>
                                         <button className='button' onClick={() => this.submitAnswer('optionTwo')}>{question.optionTwo.text}</button>
@@ -71,14 +82,15 @@ function isPollAnsweredByCurrentUser(loggedUser, question) {
     }
 }
 
-function mapStateToProps({questions, login}, props) {
+function mapStateToProps({questions, users, login}, props) {
     const {id} = props.match.params
     const question = questions[id]
 
     return {
         loggedUser: login ? login.loggedUser : null,
         question,
-        id
+        id,
+        users
     }
 }
 

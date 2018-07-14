@@ -7,7 +7,6 @@ export function login(state = null, action) {
                 ...state,
                 loggedUser: action.userId
             }            
-    
         default:
             return state
     }

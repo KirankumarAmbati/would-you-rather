@@ -1,3 +1,5 @@
+// Images are taken from pixnio.com
+
 let users = {
   sarahedo: {
     id: 'sarahedo',

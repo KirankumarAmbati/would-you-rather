@@ -35,18 +35,18 @@ export function handleAnswerPoll(answerObject) {
             .catch((e) => {
                 console.log('Save Poll Failed !!')
                 dispatch(answerPoll(answerObject))
-            })
+        })
     }
 }
 
 export function handleAddQuestion(question) {
     return (dispatch) => {
         return saveQuestion(question)
-        .then((formattedQuestion) => {
-            dispatch(addQuestion(formattedQuestion))
-        })
-        .catch((e) => {
-            console.log('AddQuestion action failed..')
+            .then((formattedQuestion) => {
+                dispatch(addQuestion(formattedQuestion))
+            })
+            .catch((e) => {
+                console.log('AddQuestion action failed..')
         })
     }
 }

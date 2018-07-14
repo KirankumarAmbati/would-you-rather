@@ -1,13 +1,13 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Redirect} from 'react-router-dom'
-import NavigationBar from './NavigationBar'
 import '../assets/main.css'
+import NavigationBar from './NavigationBar'
 import Question from './Question'
 
 class Dashboard extends React.Component {
     state = {
-        renderUnanswered:true
+        renderUnanswered: true
     }
 
     changeQuestions() {

@@ -13,6 +13,6 @@ export function handleInitialLoad() {
                 dispatch(updateUsers(users))
                 dispatch(updateQuestions(questions))
                 dispatch(hideLoading())
-            })
+        })
     }
 }
