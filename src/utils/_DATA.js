@@ -2,7 +2,7 @@ let users = {
   sarahedo: {
     id: 'sarahedo',
     name: 'Sarah Edo',
-    avatarURL: 'https://vignette.wikia.nocookie.net/narutofanon/images/d/d6/25px-Mangekyo_Sharingan_Eterno_de_.png',
+    avatarURL: 'https://pixnio.com/free-images/2017/05/23/2017-05-23-16-50-16-900x547.jpg',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionOne',
@@ -14,7 +14,7 @@ let users = {
   tylermcginnis: {
     id: 'tylermcginnis',
     name: 'Tyler McGinnis',
-    avatarURL: 'https://vignette.wikia.nocookie.net/narutofanon/images/d/d6/25px-Mangekyo_Sharingan_Eterno_de_.png',
+    avatarURL: 'https://pixnio.com/free-images/2017/11/09/2017-11-09-19-11-41-1200x800.jpg',
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -24,7 +24,7 @@ let users = {
   johndoe: {
     id: 'johndoe',
     name: 'John Doe',
-    avatarURL: 'https://vignette.wikia.nocookie.net/narutofanon/images/d/d6/25px-Mangekyo_Sharingan_Eterno_de_.png',
+    avatarURL: 'https://pixnio.com/free-images/2017/08/20/2017-08-20-10-00-39-1000x667.jpg',
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',
@@ -51,7 +51,7 @@ let questions = {
   "6ni6ok3ym7mf1p33lnez": {
     id: '6ni6ok3ym7mf1p33lnez',
     author: 'johndoe',
-    timestamp: 1468479767190,
+    timestamp: 1531326793069,
     optionOne: {
       votes: [],
       text: 'become a superhero',

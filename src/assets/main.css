@@ -1,0 +1,36 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.container {
+    padding: 40px;
+}
+
+.button {
+    border:2px solid black;
+    padding: 10px;
+    font-size: 20px;
+    margin: 10px 10px 10px 0px;
+    text-decoration: none;
+    color: black;
+
+}
+
+.button:hover {
+    background-color: black;
+    color: white
+}
+
+.leaderBoard-card {
+    border: 1px solid black;
+    width: 25%;
+    padding: 1%;
+    list-style: none;
+    margin: 2%;
+    box-shadow: 1px 3px 25px 2px;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
