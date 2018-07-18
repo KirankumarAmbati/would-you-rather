@@ -18,19 +18,19 @@ class AddQuestion extends React.Component {
     handleSubmit() {
         const optionOneText = this.optionOne.value
         const optionTwoText = this.optionTwo.value
-        const { loggedUser, dispatch } = this.props
+        const { loggedUser, handleAddQuestion } = this.props
         
         this.setState({
             displayErrorMessage1:false,
             displayErrorMessage2:false
         })
-        
+
         if(optionOneText && optionTwoText) {
-            dispatch(handleAddQuestion({
+            handleAddQuestion({
                 optionOneText,
                 optionTwoText,
                 author: loggedUser
-            }))
+            })
 
             this.props.history.push('/')
         } else {
@@ -108,4 +108,4 @@ function mapStateToProps({login}) {
     }
 }
 
-export default withRouter(connect(mapStateToProps)(AddQuestion))
+export default withRouter(connect(mapStateToProps, { handleAddQuestion })(AddQuestion))

@@ -13,8 +13,7 @@ import {handleInitialLoad} from '../actions/initialLoad'
 
 class App extends Component {
   componentDidMount() {
-    const {dispatch} = this.props
-    dispatch(handleInitialLoad())
+    this.props.handleInitialLoad()
   }
 
   render() {
@@ -32,4 +31,4 @@ class App extends Component {
   }
 }
 
-export default connect()(App)
+export default connect(null, { handleInitialLoad })(App)

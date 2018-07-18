@@ -8,13 +8,13 @@ import FourOFour from './FourOFour'
 
 class QuestionPage extends React.Component {
     submitAnswer = (option) => {
-        const {dispatch, loggedUser, id} = this.props
+        const {handleAnswerPoll, loggedUser, id} = this.props
         
-        dispatch(handleAnswerPoll({
+        handleAnswerPoll({
             authedUser:loggedUser,
             qid:id,
             answer:option
-        }))
+        })
     }
 
     render() {
@@ -96,4 +96,4 @@ function mapStateToProps({questions, users, login}, props) {
     }
 }
 
-export default connect(mapStateToProps)(QuestionPage)
+export default connect(mapStateToProps, { handleAnswerPoll })(QuestionPage)

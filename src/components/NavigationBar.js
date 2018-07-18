@@ -10,9 +10,9 @@ class NavigationBar extends React.Component {
     }
 
     handleLogout() {
-        const {dispatch} = this.props
-        dispatch(login(null))
-        this.props.history.push('/')
+        const {login, history } = this.props
+        login(null)
+        history.push('/')
     }
 
     render() {
@@ -45,4 +45,4 @@ function mapStateToProps({users, login}) {
     }
 }
 
-export default withRouter(connect(mapStateToProps)(NavigationBar))
+export default withRouter(connect(mapStateToProps, { login })(NavigationBar))

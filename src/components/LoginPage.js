@@ -4,8 +4,7 @@ import {login} from '../actions/login'
 
 class LoginPage extends React.Component {
     handleClick = (userId) => {
-        const {dispatch} = this.props
-        dispatch(login(userId))
+        this.props.login(userId)
     }
 
     render() {
@@ -48,4 +47,4 @@ function mapStateToProps({users}) {
         users
     }
 }
-export default connect(mapStateToProps)(LoginPage)
+export default connect(mapStateToProps, { login })(LoginPage)

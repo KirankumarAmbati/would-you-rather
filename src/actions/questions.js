@@ -5,7 +5,7 @@ import {
     UPDATE_QUESTIONS
 } from './actionTypes'
 
-export function updateQuestions(questions) {
+function updateQuestions(questions) {
     return {
         type: UPDATE_QUESTIONS,
         questions
@@ -28,7 +28,7 @@ function addQuestion(formattedQuestion) {
     }
 }
 
-export function handleAnswerPoll(answerObject) {
+function handleAnswerPoll(answerObject) {
     return (dispatch) => {
         dispatch(answerPoll(answerObject))
         
@@ -40,7 +40,7 @@ export function handleAnswerPoll(answerObject) {
     }
 }
 
-export function handleAddQuestion(question) {
+function handleAddQuestion(question) {
     return (dispatch) => {
         return saveQuestion(question)
             .then((formattedQuestion) => {
@@ -50,4 +50,10 @@ export function handleAddQuestion(question) {
                 console.log('AddQuestion action failed..')
         })
     }
+}
+
+export {
+    updateQuestions,
+    handleAnswerPoll,
+    handleAddQuestion
 }
