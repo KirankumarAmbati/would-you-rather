@@ -9,4 +9,4 @@ Installation:
 4. `npm start`
 5. Hit `http://localhost:3000/` in browser to view the output.
 
-Note: Images are taken from pixnio.com
+Note: Images are taken from http://pravatar.cc

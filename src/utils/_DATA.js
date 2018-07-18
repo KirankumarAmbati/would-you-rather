@@ -1,10 +1,10 @@
-// Images are taken from pixnio.com
+// Images are taken from http://pravatar.cc
 
 let users = {
   sarahedo: {
     id: 'sarahedo',
     name: 'Sarah Edo',
-    avatarURL: 'https://pixnio.com/free-images/2017/05/23/2017-05-23-16-50-16-900x547.jpg',
+    avatarURL: 'http://i.pravatar.cc/150?img=10',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionOne',
@@ -16,7 +16,7 @@ let users = {
   tylermcginnis: {
     id: 'tylermcginnis',
     name: 'Tyler McGinnis',
-    avatarURL: 'https://pixnio.com/free-images/2017/11/09/2017-11-09-19-11-41-1200x800.jpg',
+    avatarURL: 'http://i.pravatar.cc/150?img=12',
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -26,7 +26,7 @@ let users = {
   johndoe: {
     id: 'johndoe',
     name: 'John Doe',
-    avatarURL: 'https://pixnio.com/free-images/2017/08/20/2017-08-20-10-00-39-1000x667.jpg',
+    avatarURL: 'http://i.pravatar.cc/150?img=7',
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',

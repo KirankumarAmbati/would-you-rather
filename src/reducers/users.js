@@ -1,4 +1,4 @@
-import {UPDATE_USERS} from '../actions/users'
+import {UPDATE_USERS} from '../actions/actionTypes'
 
 export function users(state = {}, action) {
     switch (action.type) {

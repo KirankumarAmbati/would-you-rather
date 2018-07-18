@@ -1,8 +1,10 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {Redirect} from 'react-router-dom'
 import {Link} from 'react-router-dom'
 import {handleAnswerPoll} from '../actions/questions'
+import LoginPage from './LoginPage'
+import FourOFour from './FourOFour'
+
 
 class QuestionPage extends React.Component {
     submitAnswer = (option) => {
@@ -19,11 +21,11 @@ class QuestionPage extends React.Component {
         const {loggedUser, question, users} = this.props
 
         if(loggedUser === null) {
-            return <Redirect to='/' />
+            return <LoginPage />
         }
 
         if(question === null) {
-            return <h1>404. Poll Not Found</h1>
+            return <FourOFour />
         }
 
         const optionSelectedByUser = isPollAnsweredByCurrentUser(loggedUser, question)
@@ -66,7 +68,7 @@ class QuestionPage extends React.Component {
         return (
             <div>
                 { renderQuestion }
-                <Link to='/dashboard' className='button' style={{marginLeft:'35px'}}>Home</Link>
+                <Link to='/' className='button' style={{marginLeft:'35px'}}>Home</Link>
             </div>
         )
     }
@@ -84,7 +86,7 @@ function isPollAnsweredByCurrentUser(loggedUser, question) {
 
 function mapStateToProps({questions, users, login}, props) {
     const {id} = props.match.params
-    const question = questions[id]
+    const question=questions[id] ? questions[id] : null
 
     return {
         loggedUser: login ? login.loggedUser : null,

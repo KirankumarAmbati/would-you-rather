@@ -1,4 +1,4 @@
-export const UPDATE_USERS = 'UPDATE_USERS'
+import {UPDATE_USERS} from './actionTypes'
 
 export function updateUsers(users) {
     return {

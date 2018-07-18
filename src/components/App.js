@@ -10,11 +10,11 @@ import QuestionPage from './QuestionPage'
 import LeaderBoard from './LeaderBoard'
 import AddQuestion from './AddQuestion'
 import {handleInitialLoad} from '../actions/initialLoad'
-import LoginPage from './LoginPage'
 
 class App extends Component {
   componentDidMount() {
-    this.props.dispatch(handleInitialLoad())
+    const {dispatch} = this.props
+    dispatch(handleInitialLoad())
   }
 
   render() {
@@ -22,10 +22,9 @@ class App extends Component {
       <Router>
         <Fragment>
           <LoadingBar />
-          <Route path='/' exact component={LoginPage} />
-          <Route path='/newpoll' component={AddQuestion} />
+          <Route path='/' exact component={Dashboard} />
+          <Route path='/add' component={AddQuestion} />
           <Route path='/leaderboard' component={LeaderBoard} />
-          <Route path='/dashboard' component={Dashboard} />
           <Route path='/question/:id' component={QuestionPage} />
         </Fragment>
       </Router>

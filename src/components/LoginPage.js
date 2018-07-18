@@ -6,7 +6,6 @@ class LoginPage extends React.Component {
     handleClick = (userId) => {
         const {dispatch} = this.props
         dispatch(login(userId))
-        this.props.history.push('/dashboard')
     }
 
     render() {

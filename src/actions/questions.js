@@ -1,8 +1,9 @@
 import { saveQuestionAnswer, saveQuestion } from '../utils/api'
-
-export const UPDATE_QUESTIONS = 'UPDATE_QUESTIONS'
-export const ADD_QUESTION = 'ADD_QUESTION'
-export const ANSWER_A_POLL = 'ANSWER_A_POLL'
+import {
+    ANSWER_A_POLL,
+    ADD_QUESTION,
+    UPDATE_QUESTIONS
+} from './actionTypes'
 
 export function updateQuestions(questions) {
     return {

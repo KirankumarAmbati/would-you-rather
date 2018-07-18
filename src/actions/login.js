@@ -1,4 +1,4 @@
-export const LOGIN = 'LOGIN'
+import {LOGIN} from './actionTypes'
 
 export function login(userId) {
     return {

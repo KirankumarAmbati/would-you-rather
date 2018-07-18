@@ -1,20 +1,23 @@
 import React from 'react'
-import {Link, Redirect} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {login} from '../actions/login'
 class NavigationBar extends React.Component {
-    handleLogout = () => {
+
+    constructor(props) {
+        super(props)
+        this.handleLogout = this.handleLogout.bind(this)
+    }
+
+    handleLogout() {
         const {dispatch} = this.props
         dispatch(login(null))
+        this.props.history.push('/')
     }
 
     render() {
 
         const {loggedUser, users} = this.props
-
-        if(loggedUser === null) {
-            return <Redirect to='/' />
-        }
 
         return (
             <div>
@@ -26,8 +29,8 @@ class NavigationBar extends React.Component {
                     style={{borderRadius:'50%'}}
                 />
                 <h3>Hello {users[loggedUser].name} !</h3>
-                <Link to={'/dashboard'} className='button'>Dashboard</Link>
-                <Link to={'/newpoll'} className='button'>Add Poll</Link>
+                <Link to={'/'} className='button'>Dashboard</Link>
+                <Link to={'/add'} className='button'>Add Poll</Link>
                 <Link to={'/leaderboard'} className='button'>Leaderboard</Link>
                 <a href='' className='button' onClick={this.handleLogout}>Logout</a>
             </div>
@@ -42,4 +45,4 @@ function mapStateToProps({users, login}) {
     }
 }
 
-export default connect(mapStateToProps)(NavigationBar)
+export default withRouter(connect(mapStateToProps)(NavigationBar))

@@ -1,4 +1,4 @@
-import {LOGIN} from '../actions/login'
+import {LOGIN} from '../actions/actionTypes'
 
 export function login(state = null, action) {
     switch (action.type) {

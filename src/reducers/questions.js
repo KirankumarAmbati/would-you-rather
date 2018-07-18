@@ -1,4 +1,4 @@
-import { UPDATE_QUESTIONS, ANSWER_A_POLL, ADD_QUESTION } from '../actions/questions'
+import { UPDATE_QUESTIONS, ANSWER_A_POLL, ADD_QUESTION } from '../actions/actionTypes'
 
 export function questions(state = {}, action) {
     switch (action.type) {

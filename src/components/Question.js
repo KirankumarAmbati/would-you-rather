@@ -1,14 +1,10 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {Link, Redirect} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 class Question extends React.Component {
     render() {
-        const {loggedUser, question, id, users} = this.props
-
-        if(loggedUser === null) {
-            return <Redirect to='/' />
-        }
+        const {question, id, users} = this.props
 
         return(
             <Link
